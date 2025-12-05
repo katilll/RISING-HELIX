@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -16,41 +15,51 @@ export default function Navbar() {
       className={`fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur-xl ${
         scrolled
           ? "bg-black/90 shadow-[0_5px_25px_rgba(0,0,0,0.6)]"
-          : "bg-linear-to-b from-black/80 to-transparent"
+          : "bg-gradient-to-b from-black/80 to-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+      <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-6">
 
-        {/* LOGO with smooth animation */}
-        <h1
-          className={`text-3xl font-extrabold tracking-wide transition-all duration-300 ${
-            scrolled ? "scale-[1.03]" : "scale-100"
-          }`}
+        {/* LOGO + BRAND CLICKABLE */}
+        <Link
+          to="/"
+          className="flex items-center gap-3 group cursor-pointer select-none"
         >
-          <span className="text-red-600">DW</span>
-          <span className="text-white">Innovation</span>
-        </h1>
+          <img
+            src="/HELIX.jpeg"
+            alt="Rising Helix Logo"
+            className="w-12 h-12 rounded-lg object-cover transition duration-300 
+                       shadow-[0_0_15px_rgba(255,80,0,0.5)]
+                       group-hover:scale-110 group-hover:rotate-3"
+          />
 
-        {/* MENU */}
+          <h1
+            className="text-2xl font-extrabold tracking-wide transition-all duration-300 
+                       group-hover:scale-105 group-hover:text-red-500"
+          >
+            <span className="text-red-600">RISING</span>
+            <span className="text-white"> HELIX</span>
+          </h1>
+        </Link>
+
+        {/* MENU LINKS */}
         <div className="hidden md:flex gap-8 text-gray-300 font-medium text-sm">
-          {["Home", "About", "Services", "Why Us", "Testimonials"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase().replace(" ", "")}`}
-              className="relative group transition"
-            >
-              {item}
-              {/* Red underline on hover */}
-              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-300"></span>
-            </a>
-          ))}
+          <Link to="/" className="hover:text-red-500 transition">Home</Link>
+          <Link to="/tuition" className="hover:text-red-500 transition">Tuition Centre</Link>
+          <Link to="/jobs" className="hover:text-red-500 transition">Jobs</Link>
+          <Link to="/about" className="hover:text-red-500 transition">About</Link>
+          <Link to="/contact" className="hover:text-red-500 transition">Contact</Link>
+          <Link to="/blogs" className="hover:text-red-500 transition">Blogs</Link>
         </div>
 
-        {/* JOIN BUTTON (Netflix style) */}
-        <button className="hidden md:block px-5 py-2 bg-red-600 text-white font-semibold rounded-md shadow-md hover:bg-red-700 hover:shadow-red-900/50 transition-all duration-300">
-          Join Now
+        {/* CTA */}
+        <button
+          className="hidden md:block px-6 py-2 bg-red-600 text-white rounded-md 
+                     shadow-lg hover:bg-red-700 hover:shadow-red-500/30 
+                     transition font-semibold"
+        >
+          Enroll Now
         </button>
-
       </div>
     </nav>
   );

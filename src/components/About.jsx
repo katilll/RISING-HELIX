@@ -1,178 +1,215 @@
 import { motion } from "framer-motion";
 
 export default function About() {
-  const gallery = [
-    "/cricket_2.jpg",
-    "/anniversary_1.jpg",
-    "/open_mic_1.jpg",
+  const values = [
+    { title: "Excellence", text: "We maintain the highest standards in teaching and student support." },
+    { title: "Passion", text: "Our dedicated team is committed to inspiring every learner." },
+    { title: "Community", text: "We build strong, supportive relationships with students and families." },
+    { title: "Achievement", text: "We help students reach academic and career milestones with confidence." },
   ];
 
-  const timeline = [
-    { year: "2021", text: "DW Innovation was founded with a mission to create impactful digital solutions." },
-    { year: "2022", text: "Successfully expanded into mobile & product development." },
-    { year: "2023", text: "Launched automation & UI/UX innovation labs." },
-    { year: "2024", text: "Grew into a global tech partner, delivering high-end software." },
-    { year: "2025", text: "On track to become one of India’s fastest-growing digital agencies." },
+  const stats = [
+    { num: "2024", label: "Established" },
+    { num: "500+", label: "Students Helped" },
+    { num: "100+", label: "Job Placements" },
+    { num: "100%", label: "Free Guidance" },
+  ];
+
+  const services = [
+    {
+      title: "University & Study Abroad Services",
+      desc: "Guiding students through international and UK higher education opportunities.",
+      points: [
+        "Free educational counselling",
+        "Course & university selection",
+        "Application & admission support",
+        "Visa & immigration help",
+        "Scholarship guidance",
+        "Pre & post-arrival support",
+      ],
+    },
+    {
+      title: "Tuition Centre Services",
+      desc: "Providing expert tuition from primary level to A-Levels, both online & in-centre.",
+      points: [
+        "Primary education (Year 1–6)",
+        "KS1–KS3 academic support",
+        "GCSE preparation",
+        "A-Level subjects",
+        "11+ Grammar school coaching",
+        "Adult & professional exam preparation",
+      ],
+    },
+    {
+      title: "Teaching Jobs Placement",
+      desc: "Helping aspiring educators secure rewarding roles in UK schools.",
+      points: [
+        "Teaching assistant roles",
+        "SEND & Higher Level TA positions",
+        "Holiday club staff support",
+        "Interview preparation",
+        "Career development guidance",
+        "Professional job placements",
+      ],
+    },
   ];
 
   return (
-    <section
-      id="about"
-      className="py-24 px-10 bg-linear-to-b from-[#111] via-[#0c0c0c] to-black text-white"
-    >
+    <section id="about" className="py-24 px-10 bg-white text-gray-900">
       <div className="max-w-7xl mx-auto space-y-20">
 
-        {/* ---- HEADING ---- */}
+        {/* 🌟 TOP HEADING */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-5xl font-extrabold text-center"
         >
-          About <span className="text-red-600">DW Innovation</span>
+          About <span className="text-orange-600">Rising Helix</span>
         </motion.h2>
 
-        {/* ---- MAIN ABOUT + IMAGE ---- */}
+        {/* 🌟 INTRO + IMAGE SECTION */}
         <div className="grid md:grid-cols-2 gap-16 items-center">
 
-          {/* LEFT: OFFICE PHOTOS STACKED */}
+          {/* IMAGE */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9 }}
-            className="grid grid-rows-3 gap-6"
+            className="rounded-2xl overflow-hidden shadow-[0_0_25px_rgba(255,165,0,0.25)]"
           >
-            {["/office1.jpg", "/office2.jpg", "/office3.jpg"].map((img, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 3 + i,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="rounded-xl overflow-hidden shadow-lg shadow-red-900/40"
-              >
-                <img
-                  src={img}
-                  className="w-full h-[180px] object-cover hover:opacity-90 transition"
-                />
-              </motion.div>
-            ))}
+            <img src="/Student.avif" className="w-full h-[400px] object-cover" />
           </motion.div>
 
-          {/* RIGHT: TEXT SECTION */}
+          {/* TEXT */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9 }}
             className="space-y-6"
           >
-            <h3 className="text-3xl font-bold">Our Story</h3>
+            <h3 className="text-3xl font-bold">Rising Helix</h3>
 
-            <p className="text-gray-300 leading-relaxed text-lg">
-              DW Innovation Pvt. Ltd. was founded by forward-thinking entrepreneurs
-              with a vision to build reliable, high-impact digital solutions.
-              Rooted in creativity, precision and passion—we transform ideas into
-              powerful digital experiences.
+            <p className="text-gray-700 text-lg leading-relaxed">
+              Supporting academic and professional journeys since 2021, Rising Helix
+              provides free educational guidance, world-class tuition, and career support
+              for students and professionals in the UK and abroad.
             </p>
 
-            <p className="text-gray-300 leading-relaxed text-lg">
-              Today, we serve clients across industries with cutting-edge web,
-              mobile and custom software solutions—making us one of India’s most
-              trusted innovation partners.
+            <p className="text-gray-700 text-lg leading-relaxed">
+              Our goal is to make high-quality education accessible while preparing
+              learners with strong academic foundations and future-ready skills.
             </p>
 
-            <h3 className="text-3xl font-bold pt-6">Empowering Through Action</h3>
-
-            <p className="text-gray-300 leading-relaxed text-lg">
-              We believe progress matters only when it uplifts communities.  
-              From sustainability efforts to cultural engagement—our team takes
-              meaningful action that creates lasting impact.
-            </p>
+            <div className="flex gap-4 pt-4">
+              <button className="px-6 py-3 bg-orange-600 text-white rounded-md hover:bg-orange-700">
+                Get Started
+              </button>
+              <button className="px-6 py-3 border border-gray-400 rounded-md hover:bg-gray-100">
+                Contact Us
+              </button>
+            </div>
           </motion.div>
-
         </div>
 
-        {/* ---- EVENT MINI-GALLERY ---- */}
-        <div>
-          <h3 className="text-3xl font-bold mb-6 text-red-500">
-            Our Cricket & Cultural Events
-          </h3>
+        {/* 🌟 MISSION SECTION */}
+        <div className="text-center max-w-4xl mx-auto space-y-6">
+          <h3 className="text-3xl font-bold">Our Mission</h3>
 
-          <p className="text-gray-300 mb-6">
-            Celebrating teamwork, creativity, and unity—our events strengthen the DW Innovation family.
+          <p className="text-gray-700 text-lg">
+            To empower learners with high-quality education, mentorship, and global
+            opportunities — helping them achieve academic excellence and long-term success.
           </p>
 
-          <div className="grid grid-cols-3 gap-6">
-            {gallery.map((img, i) => (
+          <div className="grid md:grid-cols-3 gap-8 mt-10">
+            {["Educational Excellence", "Student Success", "Global Opportunities"].map(
+              (item, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.07 }}
+                  className="p-6 bg-white rounded-xl border border-orange-300/40 shadow"
+                >
+                  <p className="font-semibold text-orange-600">{item}</p>
+                </motion.div>
+              )
+            )}
+          </div>
+        </div>
+
+        {/* 🌟 ACHIEVEMENTS */}
+        <div>
+          <h3 className="text-3xl font-bold mb-8 text-center">Our Achievements</h3>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {stats.map((item, i) => (
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.1 }}
-                className="rounded-xl overflow-hidden shadow-lg shadow-red-900/40 cursor-pointer"
+                className="p-8 text-center bg-white rounded-xl border border-orange-300/40 shadow"
               >
-                <img
-                  src={img}
-                  className="w-full h-[150px] object-cover hover:opacity-90 transition"
-                />
+                <h2 className="text-4xl font-extrabold text-orange-600">{item.num}</h2>
+                <p className="text-gray-700 mt-2 font-medium">{item.label}</p>
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* ---- TIMELINE ---- */}
-        <div className="mt-20">
-          <h3 className="text-3xl font-bold mb-8">Who We Are</h3>
+        {/* 🌟 SERVICES */}
+        <div>
+          <h3 className="text-3xl font-bold text-center mb-10">Our Services</h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-            {timeline.map((item, i) => (
+          <div className="grid md:grid-cols-3 gap-12">
+            {services.map((srv, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: i * 0.1 }}
-                className="p-5 bg-[#1a1a1a] rounded-xl border border-white/5 hover:border-red-600 transition"
+                whileHover={{ scale: 1.05 }}
+                className="p-6 bg-white rounded-xl border border-orange-300/30 shadow"
               >
-                <h4 className="text-2xl font-bold text-red-500">{item.year}</h4>
-                <p className="text-gray-300 text-sm mt-2">{item.text}</p>
+                <h4 className="text-xl font-bold text-orange-600">{srv.title}</h4>
+                <p className="text-gray-700 mt-2">{srv.desc}</p>
+
+                <ul className="mt-4 space-y-2 text-gray-700 text-sm">
+                  {srv.points.map((p, idx) => (
+                    <li key={idx}>• {p}</li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* ---- MISSION & STATS ---- */}
-        <div className="grid md:grid-cols-2 gap-10 items-start mt-20">
-
-          {/* MISSION */}
+        {/* 🌟 MISSION & VISION */}
+        <div className="grid md:grid-cols-2 gap-12 mt-20">
           <div>
             <h3 className="text-3xl font-bold mb-4">Mission & Vision</h3>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              “Experience. Excellence. Every Time.”  
-              Empowering businesses with quality-driven digital solutions,
-              unmatched innovation, and consistent client satisfaction.
+            <p className="text-gray-700 text-lg">
+              Rising Helix aims to transform lives through innovative teaching,
+              personalized learning, and career-focused educational support.
             </p>
           </div>
 
-          {/* STATS */}
-          <div className="grid grid-cols-3 gap-6">
-            <motion.div whileHover={{ scale: 1.1 }} className="text-center">
-              <h2 className="text-4xl font-extrabold text-red-500">352+</h2>
-              <p className="text-gray-300">Projects Completed</p>
-            </motion.div>
-
-            <motion.div whileHover={{ scale: 1.1 }} className="text-center">
-              <h2 className="text-4xl font-extrabold text-red-500">100%</h2>
-              <p className="text-gray-300">Client Satisfaction</p>
-            </motion.div>
-
-            <motion.div whileHover={{ scale: 1.1 }} className="text-center">
-              <h2 className="text-4xl font-extrabold text-red-500">5+</h2>
-              <p className="text-gray-300">Years Experience</p>
-            </motion.div>
+          <div className="p-8 bg-white rounded-xl border border-orange-300/40 shadow text-center">
+            <h2 className="text-4xl font-extrabold text-orange-600">5+</h2>
+            <p className="text-gray-700 mt-2">Years of Excellence</p>
           </div>
+        </div>
 
+        {/* 🌟 CORE VALUES */}
+        <div>
+          <h3 className="text-3xl font-bold text-center mt-16 mb-10">Our Core Values</h3>
+
+          <div className="grid md:grid-cols-4 gap-10">
+            {values.map((v, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.05 }}
+                className="p-6 bg-white rounded-xl border border-orange-300/40 shadow"
+              >
+                <h4 className="text-xl font-bold text-orange-600">{v.title}</h4>
+                <p className="text-gray-700 mt-2 text-sm">{v.text}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
       </div>

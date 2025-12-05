@@ -4,18 +4,18 @@ import { FaStar } from "react-icons/fa";
 export default function Testimonials() {
   const list = [
     {
-      name: "Rohan S.",
-      text: "DW Innovation transformed our digital presence. Highly recommended!",
+      name: "Ayesha K.",
+      text: "Rising Helix helped my daughter excel in Maths and English. Her confidence has grown massively!",
       rating: 5,
     },
     {
-      name: "Priya M.",
-      text: "Professional, responsive, and creative team.",
-      rating: 4,
+      name: "Mohammed R.",
+      text: "The Life in the UK and B1 English preparation was excellent. Passed smoothly thanks to their guidance.",
+      rating: 5,
     },
     {
-      name: "Arjun P.",
-      text: "Delivered outstanding UI/UX for our startup.",
+      name: "Sarah H.",
+      text: "Amazing teachers! Their 11+ exam preparation helped my son secure admission to a top grammar school.",
       rating: 5,
     },
   ];
@@ -23,10 +23,10 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-24 px-10 bg-linear-to-b from-black via-[#0b0b0b] to-[#111] text-white"
+      className="py-24 px-10 bg-white text-gray-900"
     >
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center text-red-600 mb-16 tracking-wide">
-        What Clients Say
+      <h2 className="text-4xl md:text-5xl font-extrabold text-center text-orange-600 mb-16 tracking-wide">
+        What Students & Parents Say
       </h2>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
@@ -37,25 +37,25 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: i * 0.1 }}
             whileHover={{ scale: 1.03 }}
-            className="p-8 rounded-xl bg-[#141414]/80 backdrop-blur-md 
-                       border border-white/10 hover:border-red-600/40 
-                       shadow-[0_0_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(255,0,0,0.2)] 
+            className="p-8 rounded-xl bg-white border border-orange-300/30 
+                       shadow-[0_0_20px_rgba(255,140,0,0.15)] 
+                       hover:shadow-[0_0_25px_rgba(255,140,0,0.25)] 
                        transition-all"
           >
             {/* Stars */}
-            <div className="flex mb-4 opacity-80">
+            <div className="flex mb-4 opacity-90">
               {[...Array(t.rating)].map((_, idx) => (
-                <FaStar key={idx} className="text-red-500 text-lg" />
+                <FaStar key={idx} className="text-orange-500 text-lg" />
               ))}
             </div>
 
             {/* Text */}
-            <p className="italic text-gray-300 mb-6 leading-relaxed">
+            <p className="italic text-gray-700 mb-6 leading-relaxed">
               "{t.text}"
             </p>
 
             {/* Name */}
-            <h4 className="font-semibold text-red-500 text-right">
+            <h4 className="font-semibold text-orange-600 text-right">
               — {t.name}
             </h4>
           </motion.div>

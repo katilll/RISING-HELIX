@@ -2,30 +2,45 @@ import { motion } from "framer-motion";
 
 export default function Products() {
   const services = [
-    { title: "Web App Development", desc: "Modern & scalable digital platforms." },
-    { title: "UI/UX Design", desc: "User-centered, clean, and innovative designs." },
-    { title: "Automation Solutions", desc: "Smart tools for smarter workflows." },
-    { title: "Branding & Identity", desc: "Design that communicates your vision." }
+    {
+      title: "University & Study Abroad Services",
+      desc: "Support for course selection, applications, scholarships, visas & pre/post-arrival assistance.",
+    },
+    {
+      title: "Tuition Centre",
+      desc: "High-quality in-centre & online tuition for KS1–KS3, GCSE, A-Levels & 11+ Entrance Exams.",
+    },
+    {
+      title: "Teaching Jobs Placement",
+      desc: "Placement support for TA, HLTA, SEND roles & teaching positions across London.",
+    },
+    {
+      title: "Smart Preparation Courses",
+      desc: "Driving Theory, Life in the UK Test, English Levels A1–B2, Quran & Bangla language classes.",
+    },
   ];
 
   return (
     <section
-      id="products"
-      className="py-24 px-10 bg-linear-to-b from-black via-[#0c0c0c] to-[#111]"
+      id="services"
+      className="py-24 px-10 bg-white"
     >
-      <h2 className="text-4xl font-extrabold text-center text-red-600 mb-14">
-        Our Services
+      <h2 className="text-4xl font-extrabold text-center text-orange-600 mb-14">
+        What We Provide
       </h2>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-4 sm:grid-cols-2 gap-10 text-white">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-4 sm:grid-cols-2 gap-10 text-gray-900">
         {services.map((s, i) => (
           <motion.div
             key={i}
-            whileHover={{ scale: 1.07 }}
-            className="p-6 rounded-xl bg-[#161616] border border-red-700/40 shadow-lg hover:shadow-red-900/50 transition cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            className="p-6 rounded-xl bg-white border border-orange-300/40 
+                       shadow-[0_0_20px_rgba(255,140,0,0.15)] 
+                       hover:shadow-[0_0_25px_rgba(255,140,0,0.3)] 
+                       transition cursor-pointer"
           >
-            <h3 className="text-xl font-bold mb-2 text-red-500">{s.title}</h3>
-            <p className="text-gray-300">{s.desc}</p>
+            <h3 className="text-xl font-bold mb-2 text-orange-600">{s.title}</h3>
+            <p className="text-gray-700">{s.desc}</p>
           </motion.div>
         ))}
       </div>

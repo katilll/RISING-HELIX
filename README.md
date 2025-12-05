@@ -1,16 +1,59 @@
-# React + Vite
+# 🌟 Rising Helix – Smart Tech & Tuition Platform  
+Built with **React + Vite**, designed for **speed**, **modern UI**, and **smooth animations**.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Rising Helix is an advanced educational platform offering  
+**Smart Tech Programs (Coding, IoT, Robotics, Python, AI)**  
+along with  
+**Academic Tuitions (KS1–KS4, GCSE, A-Level, 11+ Entrance)**.
 
-Currently, two official plugins are available:
+This project includes a fully animated, responsive website built using:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚛️ **React**
+- ⚡ **Vite**
+- 🎨 **Tailwind CSS**
+- 🎞️ **Framer Motion**
+- 📌 **React Router**
+- 🧩 **React Icons**
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Features
 
-## Expanding the ESLint configuration
+### 🎓 **Smart Tech Programs**
+- KS1 Smart Tech & Creativity  
+- KS2 Robotics & IoT Basics  
+- KS3 Python & Electronics  
+- KS4 AI & IoT Advanced Engineering  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 📘 **Academic Courses**
+- KS1–KS4 Maths & English  
+- GCSE Subjects  
+- A-Level Subject Preparation  
+- 11+ Grammar School Training  
+
+### 🧠 **Other Services**
+- University Admission Support  
+- Teaching Job Placements  
+- Career Counselling  
+
+---
+
+## 🛠️ Built With
+
+| Tech | Used For |
+|------|-----------|
+| **React** | UI Components |
+| **Vite** | Fast Build Tool |
+| **Tailwind CSS** | Styling |
+| **Framer Motion** | Animations |
+| **React Router** | Navigation |
+| **ESLint** | Code Quality |
+
+---
+
+## 📂 Project Setup
+
+Install dependencies:
+
+```bash
+npm install
